@@ -1,9 +1,7 @@
 // Participants: Gabriela Lopez, Andrew Thompson, and Lincoln Nguyen
 // Date: 02-23-21
-// Description: Class Employee implementation
+// Description: Implementation file for the employee class
 
-//This is the file: employee.cpp
-//The interface for the class Employee is in the header file employee.h
 
 #include <string>
 #include <cstdlib>
