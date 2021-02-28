@@ -59,8 +59,8 @@ using namespace std;
 		//Preconditions: A list of employees with one or more objects stored
 		//Postconditions: displays all inactive employees
 		void outputInactive(list obj) const;
-		//Preconditions:
-		//postconditions:
+		//Preconditions: A list object. calling on an empty list outputs an error
+		//postconditions: displays a menu for displaying the contents of the list by All, Active, or inactive.
 		void outputMenu(list& obj);
 	};
 	//Precondition: the employee program is running and the user has chosen to add a new employee
