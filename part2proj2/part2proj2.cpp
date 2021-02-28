@@ -123,6 +123,5 @@ int part2Main()
 {
 	srand(time(0));
 	part2();
-	system("pause");
 	return 0;
 }

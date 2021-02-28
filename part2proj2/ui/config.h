@@ -11,7 +11,7 @@ namespace config
 	const int ARRAY_MAX_WRAPPING_LENGTH = 8;
 
 	const int DEFAULT_LEFT_PADDING = 0;
-	const int DEFAULT_RIGHT_PADDING = 5;
+	const int DEFAULT_RIGHT_PADDING = 3;
 
 	const int MAX_LENGTH_PIXEL = 40;
 }
