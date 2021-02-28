@@ -40,3 +40,29 @@ double RandomGenerator::getRandomInUnitInterval()
 
 }
 
+long long RandomGenerator::getCycleLength()
+{
+	long seedBackup = seed;
+	long firstRandom = getRandomInt();
+	long long cycleLength = 0;
+	do
+		cycleLength++;
+	while (getRandomInt() != firstRandom);
+	seed = seedBackup;
+	return cycleLength;
+}
+
+bool RandomGenerator::isCycleLengthGreaterThan(long threshold)
+{
+	long seedBackup = seed;
+	long firstRandom = getRandomInt();
+	long long cycleLength = 0;
+	do
+	{
+		cycleLength++;
+		if (cycleLength > threshold) return true;
+	}
+	while (getRandomInt() != firstRandom);
+	seed = seedBackup;
+	return false;
+}

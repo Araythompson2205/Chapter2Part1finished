@@ -31,6 +31,16 @@ public:
 	// Get a random double from [0, 1). (refer to 12 in textbook pg 94)
 	double getRandomInUnitInterval();
 
+	// Person: Long Duong
+	// Precondition : Instance was properly initialized
+	// Postcondition: outputs the cycle length of current parameters
+	long long getCycleLength();
+
+	// Person: Long Duong 
+	// Precondition: Instance was properly initialized
+	// Postcondition: outputs boolean whether cycleLength is greater than threshold
+	bool isCycleLengthGreaterThan(long threshold);
+
 private:
 	long multiplier, increment, modulus;
 	long long seed;

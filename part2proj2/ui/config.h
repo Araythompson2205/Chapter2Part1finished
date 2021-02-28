@@ -14,4 +14,6 @@ namespace config
 	const int DEFAULT_RIGHT_PADDING = 3;
 
 	const int MAX_LENGTH_PIXEL = 40;
+
+	const int MIN_CYCLE_LENGTH = 900;
 }

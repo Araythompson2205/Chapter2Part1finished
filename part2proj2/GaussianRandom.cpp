@@ -20,3 +20,8 @@ double GaussianRandom::getNextInGaussianDistribution()
 	}
 	return median + (sum - 6) * sd;
 }
+
+bool GaussianRandom::isCycleLengthGreaterThan(long threshold)
+{
+	return randomGenerator.isCycleLengthGreaterThan(threshold);
+}

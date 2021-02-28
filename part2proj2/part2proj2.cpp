@@ -4,6 +4,10 @@
 
 #include <iostream>
 #include <random>
+// Participant: Long Duong
+// Date: 02-27-21
+// Description: Implementation of various UI functions.
+
 #include <limits>
 #include "RandomGenerator.h"
 #include "IncrementalDistribution.h"
@@ -50,32 +54,33 @@ void test1()
 	long multiplier = 40;
 	long increment = 725;
 	long modulus = 729;
-
+	
 	auto randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
-	long firstRandom = randomGenerator.getRandomInt();
-	long cycleLength = 0;
-	do
-		cycleLength++;
-	while (randomGenerator.getRandomInt() != firstRandom);
 
 	cout << "Test length cycle: " << endl;
 	cout << "\t";
 	diplayParameters(seed, multiplier, increment, modulus);
-	cout << "\t Generated " << cycleLength << " different numbers" << endl;
+	cout << "\t Generated " << randomGenerator.getCycleLength() << " different numbers" << endl;
 }
 
-void testUniform()
+void testUniform(long long numberOfTimes)
 {
 	cout << "Test Uniform Distribution: " << endl;
 	cout << "\t";
-	long seed = rand();
-	long multiplier = rand();
-	long increment = rand();
-	long modulus = rand();
+	long seed, multiplier, increment, modulus;
+	RandomGenerator randomGenerator;
+	do
+	{
+		seed = rand();
+		multiplier = rand();
+		increment = rand();
+		modulus = rand();
 
-	auto randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
+		randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
+	} while (!randomGenerator.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
+
 	auto incrementalDistribution = IncrementalDistribution();
-	for (long long ll = 0; ll < 1000000; ll++)
+	for (long long ll = 0; ll < numberOfTimes; ll++)
 	{
 		incrementalDistribution.add(randomGenerator.getRandomInUnitInterval());
 	}
@@ -83,24 +88,28 @@ void testUniform()
 	displayDistribution(incrementalDistribution.getDistribution());
 }
 
-void testGaussian()
+void testGaussian(long long numberOfTimes)
 {
 	cout << "Test Gaussian Distribution: " << endl;
 	cout << "\t";
-	//long seed = rand();
-	//long multiplier = rand();
-	//long increment = rand();
-	//long modulus = rand();
-	long seed = 4186;
-	long multiplier = 6652;
-	long increment = 7367;
-	long modulus = 11330;
 
 	const double defaultMedian = 0.45;
 	const double defaultSd = 0.20;
-	auto gaussianRandom = GaussianRandom(seed, multiplier, increment, modulus, defaultMedian, defaultSd);
+
+	long seed, multiplier, increment, modulus;
+	GaussianRandom gaussianRandom;
+	do
+	{
+		seed = rand();
+		multiplier = rand();
+		increment = rand();
+		modulus = rand();
+
+		gaussianRandom = GaussianRandom(seed, multiplier, increment, modulus, defaultMedian, defaultSd);
+	} while (!gaussianRandom.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
+
 	auto incrementalDistribution = IncrementalDistribution();
-	for (long long ll = 0; ll < 1000000; ll++)
+	for (long long ll = 0; ll < numberOfTimes; ll++)
 	{
 		incrementalDistribution.add(gaussianRandom.getNextInGaussianDistribution());
 	}
@@ -112,11 +121,12 @@ void testGaussian()
 
 void part2()
 {
+	const long long timesToTest = 1000000;
 	test1();
 	cout << endl;
-	testUniform();
+	testUniform(timesToTest);
 	cout << endl;
-	testGaussian();
+	testGaussian(timesToTest);
 }
 
 int part2Main()

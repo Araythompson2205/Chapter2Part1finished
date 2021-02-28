@@ -1,3 +1,7 @@
+// Participant: Gia Minh
+// Date: 02-27-21
+// Description: Class that calculates distribution incrementally.
+
 #include "IncrementalDistribution.h"
 #include <numeric>
 
