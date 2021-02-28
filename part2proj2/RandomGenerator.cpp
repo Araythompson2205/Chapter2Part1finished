@@ -37,7 +37,6 @@ long RandomGenerator::getRandomInt()
 double RandomGenerator::getRandomInUnitInterval()
 {
 	return getRandomInt() / static_cast<double>(modulus);
-
 }
 
 long long RandomGenerator::getCycleLength()

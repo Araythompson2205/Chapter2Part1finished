@@ -74,7 +74,9 @@ void testUniform(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		modulus = rand();
+		do
+			modulus = rand();
+		while (modulus == 0);
 
 		randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
 	} while (!randomGenerator.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
@@ -103,7 +105,9 @@ void testGaussian(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		modulus = rand();
+		do
+			modulus = rand();
+		while (modulus == 0);
 
 		gaussianRandom = GaussianRandom(seed, multiplier, increment, modulus, defaultMedian, defaultSd);
 	} while (!gaussianRandom.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
@@ -132,6 +136,7 @@ void part2()
 int part2Main()
 {
 	srand(time(0));
-	part2();
+	for(int i = 0; i < 60000; i++)
+		part2();
 	return 0;
 }
