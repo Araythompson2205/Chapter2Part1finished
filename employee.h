@@ -2,8 +2,8 @@
 // Date: 02-23-21
 // Description: Class Employee Definition
 
-//EXPLAIN HOW TO USE THIS CLASS************************************************************************
-//HEADER FILE COMMENT
+//This class creates and manipulates employee objects for use with the list class
+//Header file for the employee class
 
 #pragma once
 #ifndef EMPLOYEE_H
