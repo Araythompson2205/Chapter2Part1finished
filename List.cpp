@@ -1,6 +1,6 @@
 // Participants: Gabriela Lopez, Andrew Thompson, and Lincoln Nguyen
 // Date: 02-23-21
-// Description: LinkedList of Employees Implementation
+// Description: implementation file for the list class
 
 #include "List.h"
 #include <fstream>
