@@ -2,8 +2,8 @@
 // Date: 02-23-21
 // Description: LinkedList of Employees Definition
 
-//EXPLAIN HOW TO USE THIS LINKEDLIST************************************************************************
-//HEADER FILE COMMENT
+//this class creates a list which is used to store objects of the type employee, as well as read from/to files with properly formatted employee data
+//header file for the list class
 
 #pragma once
 #ifndef LIST_H
