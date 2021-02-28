@@ -9,26 +9,26 @@
 #include "employee.h"
 using namespace std;
 
-list::list() : head(NULL), tail(NULL)
+List::List() : head(NULL), tail(NULL)
 {
 	size = 0;
 }
 
-listNode* list::getHead()
+listNode* List::getHead()
 {
 	return head;
 }
-bool list::empty() const
+bool List::empty() const
 {
 	return (head == NULL);
 }
-list::list(const list& obj)
+List::List(const List& obj)
 {
 	head = new listNode;
 	head->obj = obj.head->obj;
 	head->next = obj.head->next;
 }
-void list::addItem(Employee& newObj) 
+void List::addItem(Employee& newObj) 
 {	
 	if (head == NULL) 
 	{
@@ -56,7 +56,7 @@ void list::addItem(Employee& newObj)
 }
 
 
-void list::deleteLast() {
+void List::deleteLast() {
 
 
 	if (head == NULL) {
@@ -74,7 +74,7 @@ void list::deleteLast() {
 	delete temp->next;
 	temp->next = NULL;
 }
-void list::addEmployee()
+void List::addEmployee()
 {
 	string firstName, lastName, startDate;
 	Employee newEmployee;
@@ -91,7 +91,7 @@ void list::addEmployee()
 	addItem(newEmployee);
 
 }
-ostream& operator <<(ostream& outs, list& obj) {
+ostream& operator <<(ostream& outs, List& obj) {
 	listNode* temp = obj.head;
 	while (temp != NULL) {
 		cout << '\t' << "Employee ID : " << temp->obj.getId() << '\n';
@@ -105,7 +105,7 @@ ostream& operator <<(ostream& outs, list& obj) {
 
 	return outs;
 }
-void list::readFile()
+void List::readFile()
 {
 	ifstream file;
 	Employee newEmployee;
@@ -153,7 +153,7 @@ void list::readFile()
 	}
 
 }
-void list::copyToFile()
+void List::copyToFile()
 {
 	string fileName;
 	if (empty())
@@ -177,7 +177,7 @@ void list::copyToFile()
 		cout << "\n Data successfully saved.\n";
 	}
 }
-void list::outputActive(list obj) const
+void List::outputActive(List obj) const
 {
 
 	listNode* temp = obj.head;
@@ -195,7 +195,7 @@ void list::outputActive(list obj) const
 	}
 	return;
 }
-void list::outputInactive(list obj) const
+void List::outputInactive(List obj) const
 {
 	listNode* temp = obj.head;
 	while (temp != NULL) {
@@ -212,7 +212,7 @@ void list::outputInactive(list obj) const
 	}
 	return;
 }
-void list::outputMenu (list& employeeList) 
+void List::outputMenu (List& employeeList) 
 {
 	bool loop = true;
 	if (employeeList.empty())

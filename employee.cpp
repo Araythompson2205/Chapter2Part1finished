@@ -129,13 +129,13 @@ int Employee::employeeMainMenu()
     return option;
 }
 
-void Employee::updateEmployee(list& employeeList)
+void Employee::updateEmployee(List& employeeList)
 {
     if (employeeList.empty())
         cout << "\n ERROR: Empty employee list.\n";
     else
     {
-        list listCopy(employeeList);
+        List listCopy(employeeList);
         listNode* currentPtr;
         currentPtr = listCopy.getHead();
         int firstID = currentPtr->obj.getId();
@@ -197,7 +197,7 @@ void Employee::updateEmployee(list& employeeList)
     }
 }
 
-int Employee::updatingMenu(int theEmployeeID, list employeeList)
+int Employee::updatingMenu(int theEmployeeID, List employeeList)
 {
     if (employeeList.empty())
     {
@@ -296,7 +296,7 @@ string Employee::getNewEndingDate()
     return newEndingDate;
 }
 
-void Employee::commitUpdate(int employeeID, list employeeList, char newStatus,
+void Employee::commitUpdate(int employeeID, List employeeList, char newStatus,
     string newLastName, string newFirstName, string newStartDate, string newEndingDate)
 {
     listNode* currentPtr;

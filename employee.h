@@ -11,7 +11,7 @@
 #include <string>
 using namespace std;
 
-class list;
+class List;
 
 class Employee
 {
@@ -75,10 +75,10 @@ public:
     int inputInteger(string prompt, int startRange, int endRange);
     //precondition: an employee objecy
     //postcondition: updates the employee object
-    void updateEmployee(list& employeeList);
+    void updateEmployee(List& employeeList);
     //precondition: A list of emplyee objects
     //postcondition: displays the update employee menu
-    int updatingMenu(int theEmployeeID, list employeeList);
+    int updatingMenu(int theEmployeeID, List employeeList);
     //precondition: An employee object
     //postcondition:Asks the user to enter a new status of either A, I, or U
     char inputChar(string prompt, string listChars);
@@ -99,7 +99,7 @@ public:
     string getNewEndingDate();
     //precondition: an employee object wrapped in a list
    //postcondition: commits the changes made in updating menu by replacing the object in the list node
-    void commitUpdate(int employeeID, list employeeList, char newStatus,
+    void commitUpdate(int employeeID, List employeeList, char newStatus,
         string newLastName, string newFirstName, string newStartDate, string newEndingDate);
     
 };

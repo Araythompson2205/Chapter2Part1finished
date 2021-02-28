@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,11 +144,25 @@
     <ClCompile Include="employee.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="part2proj2\GaussianRandom.cpp" />
+    <ClCompile Include="part2proj2\IncrementalDistribution.cpp" />
+    <ClCompile Include="part2proj2\part2proj2.cpp" />
+    <ClCompile Include="part2proj2\RandomGenerator.cpp" />
+    <ClCompile Include="part2proj2\ui\MixedColumn.cpp" />
+    <ClCompile Include="part2proj2\ui\Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="employee.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="part2proj2\GaussianRandom.h" />
+    <ClInclude Include="part2proj2\IncrementalDistribution.h" />
+    <ClInclude Include="part2proj2\part2proj2.h" />
+    <ClInclude Include="part2proj2\RandomGenerator.h" />
+    <ClInclude Include="part2proj2\ui\AbstractColumn.h" />
+    <ClInclude Include="part2proj2\ui\config.h" />
+    <ClInclude Include="part2proj2\ui\MixedColumn.h" />
+    <ClInclude Include="part2proj2\ui\Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,8 +7,9 @@
 #include "input.h"
 #include "List.h"
 #include "employee.h"
-using namespace std;
+#include "part2proj2/part2proj2.h"
 
+using namespace std;
 int menuOption();
 void employeeSystem();
 
@@ -20,7 +21,7 @@ int main()
 		{
 		case 0:  exit(0);
 		case 1:  system("cls"); employeeSystem();     break;
-		//case 2:  system("cls"); baseConverter();  break;
+		case 2:  system("cls"); part2Main();  break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}
 		cout << '\n';
@@ -59,7 +60,7 @@ int menuOption()
 void employeeSystem()
 {
 	Employee Employee1;
-	list employeeList; 
+	List employeeList; 
 	int menuOption;
 	do
 	{

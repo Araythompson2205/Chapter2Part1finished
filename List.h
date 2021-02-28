@@ -17,17 +17,17 @@ using namespace std;
 		Employee obj;
 		listNode* next;
 	};
-	class list {
+	class List {
 	private:
 		listNode* head, * tail;
 		int size;
 	public:
 		//Precondition:N/A
 		//Postcondition:Creates a list
-		list();
+		List();
 		//Precondition:A list object
 		//Postcondition:Creates a list with the same items as obj
-		list(const list& obj);
+		List(const List& obj);
 		/*~list();*/
 		//precondition: a  list with at least one node(Please really do not call this on an empty list)
 		//postcondition:removes the last node in the list
@@ -40,7 +40,7 @@ using namespace std;
 		void addEmployee();
 		//Precondition: a list containing employee objects
 		//postcondition: displays all list nodes and thier contents 
-		friend ostream& operator <<(ostream& outs, list& obj);
+		friend ostream& operator <<(ostream& outs, List& obj);
 		//Precondition: a list 
 		//postcondition: returns true if empty, false if not.
 		bool empty() const;
@@ -55,13 +55,13 @@ using namespace std;
 		void copyToFile();
 		//Preconditions: A list of employees wit one or more objects stored
 		//Postcondition: displays all active employees
-		void outputActive(list obj) const;
+		void outputActive(List obj) const;
 		//Preconditions: A list of employees with one or more objects stored
 		//Postconditions: displays all inactive employees
-		void outputInactive(list obj) const;
+		void outputInactive(List obj) const;
 		//Preconditions: A list object. calling on an empty list outputs an error
 		//postconditions: displays a menu for displaying the contents of the list by All, Active, or inactive.
-		void outputMenu(list& obj);
+		void outputMenu(List& obj);
 	};
 	//Precondition: the employee program is running and the user has chosen to add a new employee
 	//Postconditions: returns an input date as a string, provided it is a valid date AND is in mm/dd/yy format.
