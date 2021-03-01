@@ -4,10 +4,6 @@
 
 #include <iostream>
 #include <random>
-// Participant: Long Duong
-// Date: 02-27-21
-// Description: Implementation of various UI functions.
-
 #include <limits>
 #include "RandomGenerator.h"
 #include "IncrementalDistribution.h"
@@ -17,6 +13,16 @@
 #include "ui/config.h"
 
 using namespace std;
+
+template <typename CheckFunc>
+long getRandomSatisfy(CheckFunc func)
+{
+	while (true)
+	{
+		auto newRandom = rand();
+		if (func(newRandom)) return newRandom;
+	}
+}
 
 void diplayParameters(long seed, long multiplier, long increment, long modulus)
 {
@@ -33,7 +39,7 @@ void displayDistribution(const long frequency[10])
 	auto graphColumn = make_unique<MixedColumn>(config::DEFAULT_LEFT_PADDING, config::DEFAULT_RIGHT_PADDING, L"Graph");
 
 	const float increment = 0.1;
-	const double maxFrequency = *max_element(frequency, frequency + 10);
+	const double maxFrequency = 1 + *max_element(frequency, frequency + 10);
 	for (int i = 0; i < 10; i++)
 	{
 		intervalColumn->addItems(L"[" + to_wstring(i * increment) + L" ... " + to_wstring((i + 1) * increment) + L")");
@@ -74,9 +80,7 @@ void testUniform(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		do
-			modulus = rand();
-		while (modulus == 0);
+		modulus = getRandomSatisfy([=](auto r) { return r != 0 && r > config::MIN_RANDOM_RANGE; });
 
 		randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
 	} while (!randomGenerator.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
@@ -105,9 +109,7 @@ void testGaussian(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		do
-			modulus = rand();
-		while (modulus == 0);
+		modulus = getRandomSatisfy([=](auto r) { return r != 0 && r > config::MIN_RANDOM_RANGE; });
 
 		gaussianRandom = GaussianRandom(seed, multiplier, increment, modulus, defaultMedian, defaultSd);
 	} while (!gaussianRandom.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));

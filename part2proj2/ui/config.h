@@ -16,4 +16,5 @@ namespace config
 	const int MAX_LENGTH_PIXEL = 40;
 
 	const int MIN_CYCLE_LENGTH = 900;
+	const int MIN_RANDOM_RANGE = 1000;
 }

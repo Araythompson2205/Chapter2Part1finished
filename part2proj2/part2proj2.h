@@ -15,6 +15,11 @@
 
 using namespace std;
 
+// Preconditions: Expects a function that checks whether random number is good
+// Postconditions: Return first random number that matches conditions.
+template <typename CheckFunc>
+long getRandomSatisfy(CheckFunc);
+
 // Preconditions: Expects seed, multiplier, increment and modulus
 // Postconditions: Outputs these parameters to user
 void diplayParameters(long seed, long multiplier, long increment, long modulus);
