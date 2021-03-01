@@ -1,6 +1,6 @@
 // Participants: Gabriela Lopez, Andrew Thompson, and Lincoln Nguyen
 // Date: 02-23-21
-// Description: LinkedList of Employees Definition
+// Description: LinkedList of Employees Definition 
 
 //this class creates a list which is used to store objects of the type employee, as well as read from/to files with properly formatted employee data
 //header file for the list class

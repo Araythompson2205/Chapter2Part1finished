@@ -78,7 +78,7 @@ public:
     void updateEmployee(List& employeeList);
     //precondition: A list of emplyee objects
     //postcondition: displays the update employee menu
-    int updatingMenu(int theEmployeeID, List employeeList);
+    int updatingMenu(int theEmployeeID, List employeeList); 
     //precondition: An employee object
     //postcondition:Asks the user to enter a new status of either A, I, or U
     char inputChar(string prompt, string listChars);

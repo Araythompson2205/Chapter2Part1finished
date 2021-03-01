@@ -228,7 +228,7 @@ int Employee::updatingMenu(int theEmployeeID, List employeeList)
 char Employee::inputChar(string prompt, string listChars)
 {
     char input;
-    do
+    do 
     {
         cout << prompt;
         if (!(cin >> input))

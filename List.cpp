@@ -1,6 +1,6 @@
 // Participants: Gabriela Lopez, Andrew Thompson, and Lincoln Nguyen
 // Date: 02-23-21
-// Description: implementation file for the list class
+// Description: implementation file for the list class 
 
 #include "List.h"
 #include <fstream>
