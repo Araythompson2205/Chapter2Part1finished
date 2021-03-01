@@ -28,7 +28,7 @@ List::List(const List& obj)
 	head->obj = obj.head->obj;
 	head->next = obj.head->next;
 }
-//List::~List()
+//List::~List()  //causes fatal error and is being called improperly in update employee
 //{
 //	listNode* current = head;
 //	while (current != 0) {
