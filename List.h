@@ -30,7 +30,7 @@ using namespace std;
 		List(const List& obj);
 		//Precondition: n/a
 		//postcondition: destroys the list
-		~List();
+		//~List();
 		//precondition: a  list with at least one node(Please really do not call this on an empty list)
 		//postcondition:removes the last node in the list
 		void deleteLast();
