@@ -28,7 +28,9 @@ using namespace std;
 		//Precondition:A list object
 		//Postcondition:Creates a list with the same items as obj
 		List(const List& obj);
-		/*~list();*/
+		//Precondition: n/a
+		//postcondition: destroys the list
+		~List();
 		//precondition: a  list with at least one node(Please really do not call this on an empty list)
 		//postcondition:removes the last node in the list
 		void deleteLast();
