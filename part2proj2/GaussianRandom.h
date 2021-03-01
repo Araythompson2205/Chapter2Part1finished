@@ -1,4 +1,4 @@
-// Participant: Duyen Tran
+// Participant: Duyen Tran, Long Duong
 // Date: 02-27-21
 // Description: Generate random that follows Gaussian distribution
 

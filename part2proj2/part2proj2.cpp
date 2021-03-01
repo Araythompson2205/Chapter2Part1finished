@@ -80,7 +80,7 @@ void testUniform(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		modulus = getRandomSatisfy([=](auto r) { return r != 0 && r > config::MIN_RANDOM_RANGE; });
+		modulus = getRandomSatisfy([=](auto r) { return r > config::MIN_RANDOM_RANGE; });
 
 		randomGenerator = RandomGenerator(seed, multiplier, increment, modulus);
 	} while (!randomGenerator.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
@@ -109,7 +109,7 @@ void testGaussian(long long numberOfTimes)
 		seed = rand();
 		multiplier = rand();
 		increment = rand();
-		modulus = getRandomSatisfy([=](auto r) { return r != 0 && r > config::MIN_RANDOM_RANGE; });
+		modulus = getRandomSatisfy([=](auto r) { return r > config::MIN_RANDOM_RANGE; });
 
 		gaussianRandom = GaussianRandom(seed, multiplier, increment, modulus, defaultMedian, defaultSd);
 	} while (!gaussianRandom.isCycleLengthGreaterThan(config::MIN_CYCLE_LENGTH));
