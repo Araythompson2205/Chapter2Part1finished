@@ -76,20 +76,24 @@ void List::deleteLast() {
 }
 void List::addEmployee()
 {
-	string firstName, lastName, startDate;
-	Employee newEmployee;
-	size++;
-	newEmployee.setId(size);
-	cout << "\n Enter the last name: ";
-	cin >> lastName;
-	cout << "\n Enter the first name: ";
-	cin >> firstName;
-	startDate = inputDate("\nEnter the Starting date: ");
-	newEmployee.setFirstName(firstName);
-	newEmployee.setLastName(lastName);
-	newEmployee.setStartDate(startDate);
-	addItem(newEmployee);
-
+	if (head == NULL)
+		cout << "\nERROR: Empty employee list.\n";
+	else
+	{
+		string firstName, lastName, startDate;
+		Employee newEmployee;
+		size++;
+		newEmployee.setId(size);
+		cout << "\n Enter the last name: ";
+		cin >> lastName;
+		cout << "\n Enter the first name: ";
+		cin >> firstName;
+		startDate = inputDate("\nEnter the Starting date: ");
+		newEmployee.setFirstName(firstName);
+		newEmployee.setLastName(lastName);
+		newEmployee.setStartDate(startDate);
+		addItem(newEmployee);
+	}
 }
 ostream& operator <<(ostream& outs, List& obj) {
 	listNode* temp = obj.head;

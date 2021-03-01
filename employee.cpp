@@ -197,7 +197,7 @@ void Employee::updateEmployee(List& employeeList)
     }
 }
 
-int Employee::updatingMenu(int theEmployeeID, List& employeeList)
+int Employee::updatingMenu(int theEmployeeID, List employeeList)
 {
     if (employeeList.empty())
     {
@@ -260,7 +260,7 @@ char Employee::inputChar(string prompt, string listChars)
 
 char Employee::getNewStatus()
 {
-    char newStatus = inputChar("\nChange status to A-active, I-inactice or U-Unknown status: ", "aiu");
+    char newStatus = toupper(inputChar("\nChange status to A-active, I-inactice or U-Unknown status: ", "aiu"));
     return newStatus;
 }
 
