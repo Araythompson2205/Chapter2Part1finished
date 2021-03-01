@@ -197,7 +197,7 @@ void Employee::updateEmployee(List& employeeList)
     }
 }
 
-int Employee::updatingMenu(int theEmployeeID, List employeeList)
+int Employee::updatingMenu(int theEmployeeID, List& employeeList)
 {
     if (employeeList.empty())
     {
@@ -296,7 +296,7 @@ string Employee::getNewEndingDate()
     return newEndingDate;
 }
 
-void Employee::commitUpdate(int employeeID, List employeeList, char newStatus,
+void Employee::commitUpdate(int employeeID, List& employeeList, char newStatus,
     string newLastName, string newFirstName, string newStartDate, string newEndingDate)
 {
     listNode* currentPtr;
