@@ -1,4 +1,4 @@
-// Participant: Gia Minh
+// Participant: Gia Minh, Long Duong.
 // Date: 02-27-21
 // Description: Class that calculates distribution incrementally.
 

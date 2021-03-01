@@ -1,10 +1,6 @@
-// Participants: Christopher
+// Participants: Christopher, Duyen Tran, Long Duong
 // Date: 02-28-21
-// Description: Chapter 2 - Random Generator
-
-//Participants: Duyen TRan
-//Date:02/26/2021
-//Description: 2 last function.
+// Description: Class that generates random number
 
 
 #include <time.h>

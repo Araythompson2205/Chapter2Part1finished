@@ -138,7 +138,6 @@ void part2()
 int part2Main()
 {
 	srand(time(0));
-	for(int i = 0; i < 60000; i++)
-		part2();
+	part2();
 	return 0;
 }

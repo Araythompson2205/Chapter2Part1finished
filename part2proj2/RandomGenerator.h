@@ -1,10 +1,6 @@
-// Participants: Christopher
+// Participants: Christopher, Duyen Tran, Long Duong
 // Date: 02-28-21
-// Description: Chapter 2 - Random Generator
-
-//Participants: Duyen TRan
-//Date:02/26/2021
-//Description: 2 last function.
+// Description: Class that generates random number
 
 #pragma once
 #include <vector>
@@ -15,28 +11,26 @@ class RandomGenerator
 {
 public:
 	RandomGenerator() = default;
-	// Person: Christopher
-	// init class
+	// Preconditions: NA
+	// Postconditions: Initialize class instance
 	RandomGenerator(long _seed, long _multiplier, long _increment, long _modulus);
 	
-	// Person: Chrisopher
-	// assign new seed
+	// Preconditions: Instance was properly initialized
+	// Postconditions: The new internal seed is set 
 	void setSeed(long newSeed);
 
-	// Person: Christopher
-	// Get a new random Int from 0 to modulus (refer to problem 11 in textbook)
+	// Preconditions: Instance was properly initialized
+	// Postconditions: Return new random int from 0 to modulus
 	long getRandomInt();
 
-	// Person: DUYEN
-	// Get a random double from [0, 1). (refer to 12 in textbook pg 94)
+	// Preconditions: Instance was properly initialized
+	// Postconditions: Return a new random float in [0, 1)
 	double getRandomInUnitInterval();
 
-	// Person: Long Duong
 	// Precondition : Instance was properly initialized
 	// Postcondition: outputs the cycle length of current parameters
 	long long getCycleLength();
 
-	// Person: Long Duong 
 	// Precondition: Instance was properly initialized
 	// Postcondition: outputs boolean whether cycleLength is greater than threshold
 	bool isCycleLengthGreaterThan(long threshold);
