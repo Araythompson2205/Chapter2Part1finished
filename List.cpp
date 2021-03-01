@@ -28,16 +28,16 @@ List::List(const List& obj)
 	head->obj = obj.head->obj;
 	head->next = obj.head->next;
 }
-List::~List()
-{
-	listNode* current = head;
-	while (current != 0) {
-		listNode* next = current->next;
-		delete current;
-		current = next;
-	}
-	head = 0;
-}
+//List::~List()
+//{
+//	listNode* current = head;
+//	while (current != 0) {
+//		listNode* next = current->next;
+//		delete current;
+//		current = next;
+//	}
+//	head = 0;
+//}
 void List::addItem(Employee& newObj) 
 {	
 	if (head == NULL) 
