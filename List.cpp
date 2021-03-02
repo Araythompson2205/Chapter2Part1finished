@@ -142,7 +142,10 @@ void List::readFile()
 		fileName;
 		file.open(fileName);
 		if (!file.is_open())
-			cout << "Error: file not found!\n";
+		{
+		cout << "Error: file "<< fileName<< " not found! \n";
+		return;
+		}
 
 	} while (!file.is_open());
 	if (file.is_open())
