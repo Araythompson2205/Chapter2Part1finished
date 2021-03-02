@@ -30,7 +30,7 @@ using namespace std;
 		List(const List& obj);
 		//Precondition: n/a
 		//postcondition: destroys the list
-		//~List();
+		//~List();//causes fatal errors. Professor, would you please let me know why this destructor does this? -Andrew Thompson
 		//precondition: a  list with at least one node(Please really do not call this on an empty list)
 		//postcondition:removes the last node in the list
 		void deleteLast();
