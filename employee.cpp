@@ -195,7 +195,7 @@ void Employee::updateEmployee(List& employeeList)
             cout << '\n';
         } while (true);
 
-        delete currentPtr;    
+        // delete currentPtr;    
     }
 }
 

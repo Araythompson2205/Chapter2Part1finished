@@ -22,23 +22,32 @@ bool List::empty() const
 {
 	return (head == NULL);
 }
-List::List(const List& obj)
+List::List(const List& otherList)
 {
-	head = new listNode;
-	head->obj = obj.head->obj;
-	head->next = obj.head->next;
+	//head = new listNode;
+	//head->obj = obj.head->obj;
+	//head->next = obj.head->next;
+	head = NULL;
+	tail = NULL;
+	listNode* current = otherList.head;
+	while (current != nullptr)
+	{
+		listNode* next = current->next;
+		addItem(current->obj);
+		current = next;
+	}
 }
-//List::~List()  //causes fatal error and is being called improperly in update employee
-//{
-//	listNode* current = head;
-//	while (current != 0) {
-//		listNode* next = current->next;
-//		delete current;
-//		current = next;
-//	}
-//	head = 0;
-//}
-void List::addItem(Employee& newObj) 
+List::~List()  //causes fatal error and is being called improperly in update employee
+{
+	listNode* current = head;
+	while (current != 0) {
+		listNode* next = current->next;
+		delete current;
+		current = next;
+	}
+	head = 0;
+}
+void List::addItem(Employee newObj) 
 {	
 	if (head == NULL) 
 	{
@@ -46,7 +55,6 @@ void List::addItem(Employee& newObj)
 		head = new listNode;
 		head->obj = newObj;
 		head->next = NULL;
-		
 	}
 	else 
 	{
@@ -59,7 +67,8 @@ void List::addItem(Employee& newObj)
 		while (tempPtr->next != NULL)
 			tempPtr = tempPtr->next;
 
-		temp->next = tempPtr->next;
+		//temp->next = tempPtr->next;
+		//tempPtr->next = temp;
 		tempPtr->next = temp;
 		size++;
 	}

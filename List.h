@@ -30,13 +30,13 @@ using namespace std;
 		List(const List& obj);
 		//Precondition: n/a
 		//postcondition: destroys the list
-		//~List();//causes fatal errors. Professor, would you please let me know why this destructor does this? -Andrew Thompson
+		~List();//causes fatal errors. Professor, would you please let me know why this destructor does this? -Andrew Thompson
 		//precondition: a  list with at least one node(Please really do not call this on an empty list)
 		//postcondition:removes the last node in the list
 		void deleteLast();
 		//precondition: any list, empty or not.
 		//postcondition:adds a node with value of obj at the end of the list
-		void addItem(Employee& obj);
+		void addItem(Employee obj);
 		//Precondition: a list containing employee objects
 		//postcondition: runs the addEmployee option for the employee program, asking the user to create a new employee
 		void addEmployee();
